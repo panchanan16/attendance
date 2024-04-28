@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to test</h1>
+
+    <button onclick="getLoc()">Get Link</button>
+    <p>latitude: <span id="lat">0</span></p>
+    <p>longitude: <span id="long">0</span></p>
+
+
+    <script>
+        function getLatLong(position) {
+            console.log("latitude", position.coords.latitude);
+            console.log("longitude",  position.coords.longitude);
+            document.getElementById("lat").innerHTML = position.coords.latitude;
+            document.getElementById("long").innerHTML = position.coords.longitude;
+        }
+
+        function getLoc () {
+            window.navigator.geolocation.getCurrentPosition(getLatLong);
+        }
+    </script>
+</body>
+</html>
